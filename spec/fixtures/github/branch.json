@@ -1,0 +1,77 @@
+{
+    "name": "bump/ruby/business-1.5.0",
+    "commit": {
+        "sha": "17c5492b29fb11d2aec43b3b21961f5f23b8ef3e",
+        "commit": {
+            "author": {
+                "name": "Grey Baker",
+                "email": "greysteil@gmail.com",
+                "date": "2017-05-18T22:52:59Z"
+            },
+            "committer": {
+                "name": "Grey Baker",
+                "email": "greysteil@gmail.com",
+                "date": "2017-05-19T14:18:28Z"
+            },
+            "message": "Bump business to 1.5.0\n\nBumps [business](https://github.com/gocardless/business) from 1.4.0 to 1.5.0.\n- [Release notes](https://github.com/gocardless/business/releases/tag/v1.5.0)\n- [Changelog](https://github.com/gocardless/business/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/gocardless/business/compare/v1.4.0...v1.5.0)",
+            "tree": {
+                "sha": "fd014dc384deca8cb214fea71f490ac1d234d2ca",
+                "url": "https://api.github.com/repos/gocardless/bump/git/trees/fd014dc384deca8cb214fea71f490ac1d234d2ca"
+            },
+            "url": "https://api.github.com/repos/gocardless/bump/git/commits/17c5492b29fb11d2aec43b3b21961f5f23b8ef3e",
+            "comment_count": 0
+        },
+        "url": "https://api.github.com/repos/gocardless/bump/commits/17c5492b29fb11d2aec43b3b21961f5f23b8ef3e",
+        "html_url": "https://github.com/gocardless/bump/commit/17c5492b29fb11d2aec43b3b21961f5f23b8ef3e",
+        "comments_url": "https://api.github.com/repos/gocardless/bump/commits/17c5492b29fb11d2aec43b3b21961f5f23b8ef3e/comments",
+        "author": {
+            "login": "greysteil",
+            "id": 1144873,
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1144873?v=3",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/greysteil",
+            "html_url": "https://github.com/greysteil",
+            "followers_url": "https://api.github.com/users/greysteil/followers",
+            "following_url": "https://api.github.com/users/greysteil/following{/other_user}",
+            "gists_url": "https://api.github.com/users/greysteil/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/greysteil/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/greysteil/subscriptions",
+            "organizations_url": "https://api.github.com/users/greysteil/orgs",
+            "repos_url": "https://api.github.com/users/greysteil/repos",
+            "events_url": "https://api.github.com/users/greysteil/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/greysteil/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "committer": {
+            "login": "greysteil",
+            "id": 1144873,
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1144873?v=3",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/greysteil",
+            "html_url": "https://github.com/greysteil",
+            "followers_url": "https://api.github.com/users/greysteil/followers",
+            "following_url": "https://api.github.com/users/greysteil/following{/other_user}",
+            "gists_url": "https://api.github.com/users/greysteil/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/greysteil/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/greysteil/subscriptions",
+            "organizations_url": "https://api.github.com/users/greysteil/orgs",
+            "repos_url": "https://api.github.com/users/greysteil/repos",
+            "events_url": "https://api.github.com/users/greysteil/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/greysteil/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "parents": [
+            {
+                "sha": "ce7ff2d2cf04bbd427834094a3a2cfe740484c25",
+                "url": "https://api.github.com/repos/gocardless/bump/commits/ce7ff2d2cf04bbd427834094a3a2cfe740484c25",
+                "html_url": "https://github.com/gocardless/bump/commit/ce7ff2d2cf04bbd427834094a3a2cfe740484c25"
+            }
+        ]
+    },
+    "_links": {
+        "self": "https://api.github.com/repos/gocardless/bump/branches/bump/ruby/business-1.5.0",
+        "html": "https://github.com/gocardless/bump/tree/bump/ruby/business-1.5.0"
+    }
+}
