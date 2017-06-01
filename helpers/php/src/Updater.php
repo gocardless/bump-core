@@ -49,7 +49,6 @@ class Updater
     $install
       ->setUpdate(true)
       ->setUpdateWhitelist([$dependencyName])
-      ->setPreferStable(true)
       ->setWriteLock(true)
       ;
 
