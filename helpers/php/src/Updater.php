@@ -81,10 +81,10 @@ class Updater
   public static function relaxVersionToUserPreference($existingDependencyVersion, $suggestedDependencyVersion) {
     $version_regex = '/[0-9]+(?:\.[a-zA-Z0-9]+)*/';
     preg_match($version_regex, $existingDependencyVersion, $matches);
-    $precision = count(split("\.", $matches[0]));
+    $precision = count(explode(".", $matches[0]));
 
-    $suggestedVersionSegments = array_slice(split("\.", $suggestedDependencyVersion), 0, $precision);
-    $newDependencyVersion = str_replace($matches[0], join(".", $suggestedVersionSegments), $existingDependencyVersion);
+    $suggestedVersionSegments = array_slice(explode(".", $suggestedDependencyVersion), 0, $precision);
+    $newDependencyVersion = str_replace($matches[0], implode(".", $suggestedVersionSegments), $existingDependencyVersion);
 
     return $newDependencyVersion;
   }
