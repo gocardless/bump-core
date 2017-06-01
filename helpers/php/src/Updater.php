@@ -27,7 +27,7 @@ class Updater
     // slashes, mitigating this issue.
     //
     // https://stackoverflow.com/questions/1580647/json-why-are-forward-slashes-escaped
-    $composerJsonEncoded = json_encode($composerJson, JSON_UNESCAPED_SLASHES);
+    $composerJsonEncoded = json_encode($composerJson, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
     file_put_contents('composer.json', $composerJsonEncoded);
 
