@@ -33,10 +33,17 @@ module Bump
       def fetch_file_from_github(file_name)
         file_path = File.join(directory, file_name)
         content = github_client.contents(repo.name, path: file_path).content
+        decoded_content = Base64.decode64(content)
+
+        # Removes path based depedencies
+
+        pathless_content = decoded_content.lines.reject do |line|
+          line.include?("path")
+        end.join
 
         DependencyFile.new(
           name: file_name,
-          content: Base64.decode64(content),
+          content: pathless_content,
           directory: directory
         )
       rescue Octokit::NotFound
