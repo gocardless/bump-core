@@ -36,6 +36,17 @@ RSpec.describe Bump::FileFetchers::Base do
 
       it { is_expected.to be_a(Bump::DependencyFile) }
       its(:content) { is_expected.to include("octokit") }
+
+      context "when a block is given" do
+        let(:files) do
+          file_fetcher_instance.files do |file_content|
+            file_content + " yielded"
+          end
+        end
+
+        it { is_expected.to be_a(Bump::DependencyFile) }
+        its(:content) { is_expected.to include("yielded") }
+      end
     end
 
     context "with a directory specified" do
