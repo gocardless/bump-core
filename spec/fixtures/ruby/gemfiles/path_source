@@ -1,3 +1,5 @@
 source "https://rubygems.org"
 
+gem "hutch"
 gem "bump-core", path: "../bump-core"
+gem "prius", git: "https://github.com/gocardless/prius"
