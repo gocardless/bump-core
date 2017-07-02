@@ -1,8 +1,12 @@
-## v0.6.5, 01 Jun 2017
+## v0.6.6, 01 July 2017
+
+- Correctly list path-based dependencies (#62)
+
+## v0.6.5, 01 June 2017
 
 - Fix PHP issues from initial beta test (#61)
 
-## v0.6.4, 01 Jun 2017
+## v0.6.4, 01 June 2017
 
 - Add support for PHP (Composer) projects
 
