@@ -119,7 +119,11 @@ RSpec.describe Bump::UpdateCheckers::Ruby::Bundler do
 
       it "raises a Bump::PathBasedDependencies error" do
         expect { checker.latest_version }.
-          to raise_error(Bump::PathBasedDependencies)
+          to raise_error(
+            Bump::PathBasedDependencies,
+            "Path based dependencies are not supported. " \
+            "Path based dependencies found: bump-core"
+          )
       end
 
       context "when Bundler raises a PathError but there are no path gems" do
