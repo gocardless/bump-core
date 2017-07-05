@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 source "https://rubygems.org"
 
-gem "hutch"
-gem "bump-core", path: "../bump-core"
-gem "prius", git: "https://github.com/gocardless/prius"
+gem "bump-core", path: "plugins/bump-core"
+
+gem "business", "~> 1.4.0"
+gem "statesman", "~> 1.2.0"
