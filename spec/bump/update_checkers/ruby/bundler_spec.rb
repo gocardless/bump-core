@@ -141,6 +141,25 @@ RSpec.describe Bump::UpdateCheckers::Ruby::Bundler do
             to raise_error(Bump::SharedHelpers::ChildProcessFailed)
         end
       end
+
+      context "with downloaded gemspec" do
+        let(:gemspec_body) { fixture("ruby", "bump-core_gemspec") }
+        let(:gemspec) do
+          Bump::DependencyFile.new(
+            content: gemspec_body,
+            name: "plugins/bump-core/bump-core.gemspec"
+          )
+        end
+        let(:checker) do
+          described_class.new(
+            dependency: dependency,
+            dependency_files: [gemfile, lockfile, gemspec],
+            github_access_token: "token"
+          )
+        end
+
+        it { is_expected.to eq(Gem::Version.new("1.8.0")) }
+      end
     end
 
     context "when a gem has been yanked" do

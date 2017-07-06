@@ -5,6 +5,28 @@ require "bump/update_checkers/base"
 require "bump/shared_helpers"
 require "bump/errors"
 
+# Allow hijacking Bundler.root since it would already be loaded with the
+# project path and we need to set it to the temporary directory
+# rubocop:disable Style/ClassAndModuleChildren
+module ::Bundler
+  class << self
+    alias original_root root
+
+    def hijacked_root(dir)
+      @hijacked_root = dir
+      result = yield
+      @hijacked_root = nil
+      result
+    end
+
+    def root
+      return Pathname.new(@hijacked_root) if @hijacked_root
+
+      original_root
+    end
+  end
+end
+
 module Bump
   module UpdateCheckers
     module Ruby
@@ -23,17 +45,20 @@ module Bump
               write_temporary_dependency_files_to(dir)
 
               SharedHelpers.in_a_forked_process do
-                definition = ::Bundler::Definition.build(
-                  File.join(dir, "Gemfile"),
-                  File.join(dir, "Gemfile.lock"),
-                  gems: [dependency.name]
-                )
+                definition = ::Bundler.hijacked_root(dir) do
+                  ::Bundler::Definition.build(
+                    File.join(dir, "Gemfile"),
+                    File.join(dir, "Gemfile.lock"),
+                    gems: [dependency.name]
+                  )
+                end
 
                 dependency_source =
                   get_dependency_source(definition, dependency)
 
                 # We don't want to bump gems with a git source, so exit early
                 next nil if dependency_source.is_a?(::Bundler::Source::Git)
+                next nil if dependency_source.is_a?(::Bundler::Source::Path)
 
                 get_latest_resolvable_version(definition, dependency)
               end
@@ -107,6 +132,21 @@ module Bump
             File.join(dir, "Gemfile.lock"),
             lockfile_for_update_check
           )
+          write_gemspecs_to(dir)
+        end
+
+        def write_gemspecs_to(dir)
+          gemspecs.each do |gemspec|
+            path = File.join(dir, gemspec.name)
+            FileUtils.mkdir_p(Pathname.new(path).dirname)
+            File.write(path, gemspec.content)
+          end
+        end
+
+        def gemspecs
+          dependency_files.select do |f|
+            f.name =~ /\.gemspec$/
+          end
         end
 
         def gemfile_for_update_check

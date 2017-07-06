@@ -18,9 +18,7 @@ module Bump
       end
 
       def files
-        @files ||= self.class.required_files.map do |name|
-          fetch_file_from_github(name)
-        end
+        @files ||= required_files + extra_files
       end
 
       def commit
@@ -29,6 +27,16 @@ module Bump
       end
 
       private
+
+      def required_files
+        @required_files ||= self.class.required_files.map do |name|
+          fetch_file_from_github(name)
+        end
+      end
+
+      def extra_files
+        []
+      end
 
       def fetch_file_from_github(file_name)
         file_path = File.join(directory, file_name)
