@@ -5,7 +5,7 @@ JavaScript and Python dependencies up to date. It is used by applications
 like [Bump][bump] and [Dependabot][dependabot].
 
 **Bump Core has now been superseded by [Dependabot Core][dependabot-core], which
-we recommend for all your dependency updating needs**
+we recommend for all your dependency updating needs.**
 
 ---
 
