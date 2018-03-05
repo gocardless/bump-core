@@ -1,17 +1,12 @@
-# Bump Core
+# Bump Core (deprecated)
 
-Bump Core is a library containing the logic to keep a project's Ruby,
-JavaScript and Python dependencies up to date. It is used by applications
-like [Bump][bump] and [Dependabot][dependabot].
-
-**Bump Core has now been superseded by [Dependabot Core][dependabot-core], which
-we recommend for all your dependency updating needs.**
+> Bump was an application, created by GoCardless in 2015, which helped keep project dependencies up to date.
+>
+> Since 2017, [Dependabot](https://dependabot.com/) has fulfilled the same needs, whilst offering a wider range of features and tools to teams and individuals.
+>
+> Dependabot is powered by [dependabot-core](https://github.com/dependabot/dependabot-core), which is the spiritual successor to the bump-core project.
 
 ---
 
-GoCardless ♥ open source. If you do too, come [join us][join-gocardless].
-
-[bump]: https://github.com/gocardless/bump
-[dependabot]: https://dependabot.com
-[dependabot-core]: https://github.com/dependabot/dependabot-core
-[join-gocardless]: https://gocardless.com/about/jobs
+Bump Core was a library containing the logic to keep a project's Ruby,
+JavaScript and Python dependencies up to date. It was used by [Bump][bump].
